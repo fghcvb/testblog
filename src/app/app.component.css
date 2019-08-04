@@ -1,0 +1,7 @@
+@media (max-width: 767px) {
+	.mainContent {
+		position: relative;
+		max-width: 100%;
+	}
+	
+}

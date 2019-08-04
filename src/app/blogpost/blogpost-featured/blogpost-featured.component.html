@@ -3,8 +3,9 @@
     <div class="row">
       <div class="col-md-4" *ngFor="let blog of blogs">
         <div class="blog-box">
-          <img src="{{blog.image}}" alt="blog1" />
-          <h3>{{blog.title}}</h3>
+          <a [routerLink]="['/blog', blog.id]"><img src="{{blog.image}}" alt="blog1" />
+          </a>
+          <h3><a [routerLink]="['/blog', blog.id]" class="blogTitle">{{blog.title}}</a></h3>
           <p><span>{{blog.created_at | date:'mediumDate'}}</span></p>
           <p>{{blog.short_desc}}</p>
           <a [routerLink]="['/blog', blog.id]" class="btn btn-danger">Read more...</a>

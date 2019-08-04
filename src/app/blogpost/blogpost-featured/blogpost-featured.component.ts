@@ -19,11 +19,8 @@ export class BlogpostFeaturedComponent implements OnInit {
   ngOnInit() {
     this.blogpostService.getFeaturedBlogs().subscribe(
       (data: Blogpost) => this.blogs = data,
-
       error => this.error = error
-   
     );
-    console.log('data1', this.blogs); 
   }
 
 }

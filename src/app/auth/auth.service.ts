@@ -19,11 +19,8 @@ export class AuthService {
   redirectUrl: string;
 
   login(username: string, password: string) {
-    console.log('user', username);
-    console.log('password', password);
     return this.http.post<any>(`${this.serverUrl}api/login`, {username: username, password: password})
     .pipe(map(user => {
-      console.log('user', user);
         if (user && user.token) {
           localStorage.setItem('currentUser', JSON.stringify(user));
           this.isLoggedIn = true;

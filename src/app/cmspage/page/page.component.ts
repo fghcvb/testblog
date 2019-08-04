@@ -9,8 +9,7 @@ import { switchMap } from 'rxjs/operators';
   templateUrl: './page.component.html',
   styleUrls: ['./page.component.css']
 })
-export class PageComponent implements OnInit, AfterViewInit {
-  @ViewChild('abc1') public abccccc: ElementRef;
+export class PageComponent implements OnInit {
   page: Page;
   name: string;
   error: {};
@@ -21,7 +20,6 @@ export class PageComponent implements OnInit, AfterViewInit {
     ) { }
 
   ngOnInit() {
-    console.log('this.name', this.name);
     this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
         this.cmspageService.getPage(params.get('slug'))
@@ -31,12 +29,4 @@ export class PageComponent implements OnInit, AfterViewInit {
       error => this.error = error
     );
   }
-  ngAfterViewInit() {
-//this.abccccc.nativeElement.focus();
-// console.log('this.abccccc', this.abccccc);
-  }
-  public test(abc) {
-  console.log('abc', abc);
-}
-
 }
